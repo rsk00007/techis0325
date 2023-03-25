@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="type">種別</label>
+                            <label for="type">カテゴリー</label>
                             <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
                         </div>
 
