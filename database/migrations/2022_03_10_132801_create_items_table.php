@@ -17,9 +17,12 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned()->index();
             $table->string('name', 100)->index();
-            $table->string('status', 100)->default('active');
-            $table->smallInteger('type')->nullable();
-            $table->string('detail', 500)->nullable();
+            $table->integer('count')->nullable();
+            $table->integer('price')->nullable();
+            $table->date('hervest_day')->nullable();
+            $table->string('area', 100)->nullable();
+            $table->integer('stock')->default('1');
+            $table->text('comment', 500)->nullable();
             $table->timestamps();
         });
     }

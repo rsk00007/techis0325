@@ -14,8 +14,16 @@ class Item extends Model
     protected $fillable = [
         'user_id',
         'name',
-        'type',
-        'detail',
+        'count',
+        'price',
+        'hervest_day',
+        'area',
+        'stock',
+    ];
+
+    const STOCK = [
+        '0' => '無',
+        '1' => '有'
     ];
 
     /**

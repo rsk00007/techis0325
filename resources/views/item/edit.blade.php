@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '商品登録')
+@section('title', '商品編集')
 
 @section('content_header')
-    <h1>商品登録</h1>
+    <h1>商品編集</h1>
 @stop
 
 @section('content')
@@ -24,26 +24,24 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">名前</label>
+                            <label for="name">商品名</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="名前">
                         </div>
 
                         <div class="form-group">
-                            <label for="count">1袋あたりの個数</label>
-                            <input type="number" min=1 class="form-control" id="count" name="count" value="1"">
+                            <label for="type">種別</label>
+                            <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
                         </div>
 
                         <div class="form-group">
-                            <label for="price">販売価格</label>
-                            <input type="number" min=0 step=10 class="form-control" id="price" name="price" value=100>
+                            <label for="detail">詳細</label>
+                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                        </div>
 
                         <div class="form-group">
-                            <label for="hervest_day">収穫日</label>
-                            <input type="date" class="form-control" id="hervest_day" name="hervest_day" value="<?php echo date('Y-m-j');?>">
-
-                        <div class="form-group">
-                            <label for="area">生産地</label>
-                            <input type="area" class="form-control" id="area" name="area" placeholder="">
+                            <label for="detail">詳細</label>
+                            <input type="file" class="form-control-file" id="detail" name="detail" placeholder="詳細説明">
+                        </div>
                     </div>
 
                     <div class="card-footer">

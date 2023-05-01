@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => '商品管理',
+    'title' => '商品管理システム',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -227,6 +227,21 @@ return [
     'menu' => [
         [
             'text' => '商品一覧',
+            'url'  => 'items',
+            'icon' => 'fas fa-gamepad',
+        ],
+        [
+            'text' => '商品管理',
+            'url'  => 'items',
+            'icon' => 'fas fa-gamepad',
+        ],
+        [
+            'text' => '生産者一覧',
+            'url'  => 'items',
+            'icon' => 'fas fa-gamepad',
+        ],
+        [
+            'text' => '生産者登録',
             'url'  => 'items',
             'icon' => 'fas fa-gamepad',
         ],

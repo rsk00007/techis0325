@@ -24,19 +24,19 @@
                     <table class="table table-hover text-nowrap">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>名前</th>
-                                <th>種別</th>
-                                <th>詳細</th>
+                                <th>販売価格</th>
+                                <th>収穫日</th>
+                                <th>生産者</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($items as $item)
                                 <tr>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->type }}</td>
-                                    <td>{{ $item->detail }}</td>
+                                    <td><a href="{{url('/item/edit/'.$item->id)}}">{{ $item->name }}{{$item->count }}個</a></td>
+                                    <td>{{ $item->price }}円</td>
+                                    <td>{{ $item->hervest_day }}</td>
+                                    <td></td>
                                 </tr>
                             @endforeach
                         </tbody>

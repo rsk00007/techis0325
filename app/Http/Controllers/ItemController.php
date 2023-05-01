@@ -24,10 +24,7 @@ class ItemController extends Controller
     public function index()
     {
         // 商品一覧取得
-        $items = Item
-            ::where('items.status', 'active')
-            ->select()
-            ->get();
+        $items = Item::orderBy('id')->get();
 
         return view('item.index', compact('items'));
     }
@@ -42,19 +39,33 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
-            ]);
+            ],
+                [
+                    'name.required' => '名前を入力してください。'
+                ]);
 
             // 商品登録
             Item::create([
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
-                'type' => $request->type,
-                'detail' => $request->detail,
+                'count' => $request->count,
+                'price' => $request->price,
+                'hervest_day' => $request->hervest_day,
+                'area' => $request->area,
             ]);
 
             return redirect('/items');
         }
 
         return view('item.add');
+    }
+
+    public function edit(Request $request){
+
+        $items = Item::where('id','=',$request->id)->first();
+
+        return view('item.edit')->with([
+            'item' => $items
+        ]);
     }
 }
