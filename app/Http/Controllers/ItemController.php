@@ -21,12 +21,21 @@ class ItemController extends Controller
     /**
      * 商品一覧
      */
-    public function index()
+    public function index(Request $request)
     {
         // 商品一覧取得
-        $items = Item::orderBy('id')->get();
+        $keyword = $request->input('keyword');
 
-        return view('item.index', compact('items'));
+        $query = Item::query();
+
+        if(!empty($keyword)) {
+            $query->where('name','LIKE',"%{$keyword}%")
+                ->orwhere('price','LIKE',"%{$keyword}%");
+        }
+
+        $items = $query->get();
+
+        return view('item.index', compact('items','keyword'));
     }
 
     /**
@@ -39,9 +48,13 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
+                'hervest_day' => 'required',
+                'area' => 'required',
             ],
                 [
-                    'name.required' => '名前を入力してください。'
+                    'name.required' => '名前を入力してください。',
+                    'hervest_day.required' => '収穫日を入力してください。',
+                    'area.required' => '生産地を入力してください。',
                 ]);
 
             // 商品登録
@@ -54,7 +67,7 @@ class ItemController extends Controller
                 'area' => $request->area,
             ]);
 
-            return redirect('/items');
+            return redirect('/users/item/{id}');
         }
 
         return view('item.add');
@@ -68,4 +81,29 @@ class ItemController extends Controller
             'item' => $items
         ]);
     }
+
+        // 編集を保存して一覧画面へ
+        public function update(Request $request){
+            $items = Item::where('id','=',$request->id)->first();
+        
+            $items->name = $request->name;
+            $items->user_id = Auth::user()->id;
+            $items->name = $request->name;
+            $items->count = $request->count;
+            $items->price = $request->price;
+            $items->hervest_day = $request->hervest_day;
+            $items->area = $request->area;
+            $items->save();
+    
+            return redirect('/items');
+        }
+    
+        // データを削除する
+        public function delete(Request $request){
+    
+            $items = Item::where('id','=',$request->id)->first();
+            $items->delete();
+    
+            return redirect('/items');
+        }
 }

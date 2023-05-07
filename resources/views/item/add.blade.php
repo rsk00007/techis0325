@@ -30,20 +30,24 @@
 
                         <div class="form-group">
                             <label for="count">1袋あたりの個数</label>
-                            <input type="number" min=1 class="form-control" id="count" name="count" value="1"">
+                            <input type="number" min=1 class="form-control" id="count" name="count" value="1">
                         </div>
 
                         <div class="form-group">
                             <label for="price">販売価格</label>
                             <input type="number" min=0 step=10 class="form-control" id="price" name="price" value=100>
+                        </div>
 
                         <div class="form-group">
                             <label for="hervest_day">収穫日</label>
                             <input type="date" class="form-control" id="hervest_day" name="hervest_day" value="<?php echo date('Y-m-j');?>">
+                        </div>
 
                         <div class="form-group">
                             <label for="area">生産地</label>
                             <input type="area" class="form-control" id="area" name="area" placeholder="">
+                        </div>
+
                     </div>
 
                     <div class="card-footer">

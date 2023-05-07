@@ -19,6 +19,7 @@ class Item extends Model
         'hervest_day',
         'area',
         'stock',
+        'comment',
     ];
 
     const STOCK = [

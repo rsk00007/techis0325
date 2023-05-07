@@ -20,35 +20,43 @@
             @endif
 
             <div class="card card-primary">
-                <form method="POST">
-                    @csrf
+                <form method="POST" action="/items/update">
+                @csrf
+                <input type="hidden" name="id" value="{{$item->id}}">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">商品名</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                            <label for="name">名前</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{$item->name}}">
                         </div>
 
                         <div class="form-group">
-                            <label for="type">種別</label>
-                            <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
+                            <label for="count">1袋あたりの個数</label>
+                            <input type="number" min=1 class="form-control" id="count" name="count" value="{{$item->count}}">
                         </div>
 
                         <div class="form-group">
-                            <label for="detail">詳細</label>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
-                        </div>
+                            <label for="price">販売価格</label>
+                            <input type="number" min=0 step=10 class="form-control" id="price" name="price" value="{{$item->price}}">
 
                         <div class="form-group">
-                            <label for="detail">詳細</label>
-                            <input type="file" class="form-control-file" id="detail" name="detail" placeholder="詳細説明">
+                            <label for="hervest_day">収穫日</label>
+                            <input type="date" class="form-control" id="hervest_day" name="hervest_day" value="{{$item->hervest_day}}">
+
+                        <div class="form-group">
+                            <label for="area">生産地</label>
+                            <input type="area" class="form-control" id="area" name="area" value="{{$item->area}}">
                         </div>
-                    </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">登録</button>
+                        <button type="submit" class="btn btn-primary">更新</button>
                     </div>
                 </form>
-            </div>
+                <form class="card-footer" action="/items/delete" method="get">
+                @csrf
+                    <button type="submit" class="btn btn-secondary">削除</button>
+                    <input type="hidden" name="id" value="{{$item->id}}">
+                </form>
+                </div>
         </div>
     </div>
 @stop
