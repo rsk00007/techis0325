@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label for="area_1">今日の予定</label>
-                            <input type="text" class="form-control" id="area_1" name="area_1" placeholder="主な生産地" value="{{$user->area_1}}">
+                            <input type="text" class="form-control" id="area_1" name="area_1" placeholder="今日の予定" value="{{$user->area_1}}">
                         </div>
                         <div class="form-group">
                             <label for="comment">お願いごと</label>
