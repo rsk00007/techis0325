@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '生産者一覧')
+@section('title', '登録者一覧')
 
 @section('content_header')
-    <h1>生産者一覧</h1>
+    <h1>登録者一覧</h1>
 @stop
 
 @section('content')
@@ -11,7 +11,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">生産者のみなさん</h3>
+                    <h3 class="card-title">みなさんのつぶやき</h3>
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                         </div>
@@ -22,8 +22,8 @@
                         <thead>
                             <tr>
                                 <th>名前</th>
-                                <th>主な生産地</th>
-                                <th>コメント</th>
+                                <th>今日の予定</th>
+                                <th>お願いごと</th>
                             </tr>
                         </thead>
                         <tbody>

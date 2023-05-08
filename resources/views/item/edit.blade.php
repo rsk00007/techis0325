@@ -39,11 +39,11 @@
                             <input type="number" min=0 step=10 class="form-control" id="price" name="price" value="{{$item->price}}">
 
                         <div class="form-group">
-                            <label for="hervest_day">収穫日</label>
+                            <label for="hervest_day">購入日</label>
                             <input type="date" class="form-control" id="hervest_day" name="hervest_day" value="{{$item->hervest_day}}">
 
                         <div class="form-group">
-                            <label for="area">生産地</label>
+                            <label for="area">購入場所</label>
                             <input type="area" class="form-control" id="area" name="area" value="{{$item->area}}">
                         </div>
 
@@ -51,7 +51,7 @@
                         <button type="submit" class="btn btn-primary">更新</button>
                     </div>
                 </form>
-                <form class="card-footer" action="/items/delete" method="get">
+                <form onsubmit="return confirm('本当に削除しますか？')" class="card-footer" action="/items/delete" method="get">
                 @csrf
                     <button type="submit" class="btn btn-secondary">削除</button>
                     <input type="hidden" name="id" value="{{$item->id}}">

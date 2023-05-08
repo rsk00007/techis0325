@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '生産者登録')
+@section('title', 'わたしのつぶやき')
 
 @section('content_header')
-    <h1>生産者登録</h1>
+    <h1>私のつぶやき</h1>
 @stop
 
 @section('content')
@@ -24,16 +24,16 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="producer">生産者名</label>
-                            <input type="text" class="form-control" id="producer" name="producer" placeholder="生産者名" value="{{$user->producer}}">
+                            <label for="producer">名前</label>
+                            <input type="text" class="form-control" id="producer" name="producer" placeholder="名前" value="{{$user->producer}}">
                         </div>
                         <div class="form-group">
-                            <label for="area_1">主な生産地</label>
+                            <label for="area_1">今日の予定</label>
                             <input type="text" class="form-control" id="area_1" name="area_1" placeholder="主な生産地" value="{{$user->area_1}}">
                         </div>
                         <div class="form-group">
-                            <label for="comment">コメント</label>
-                            <textarea name="comment" class="form-control" rows="5"></textarea value="{{$user->comment}}">
+                            <label for="comment">お願いごと</label>
+                            <textarea name="comment" class="form-control">{{$user->comment}}</textarea>
                         </div>
 
                     </div>

@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => '商品管理システム',
+    'title' => '冷蔵庫管理',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>商品管理システム</b>',
+    'logo' => '<b>冷蔵庫管理</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => '商品管理システム',
+    'logo_img_alt' => '冷蔵庫管理',
 
     /*
     |--------------------------------------------------------------------------
@@ -226,17 +226,17 @@ return [
 
     'menu' => [
         [
-            'text' => '商品一覧',
+            'text' => '購入履歴',
             'url'  => 'items',
             'icon' => 'fas fa-gamepad',
         ],
         [
-            'text' => '生産者一覧',
+            'text' => '登録者一覧',
             'url'  => 'users',
             'icon' => 'fas fa-gamepad',
         ],
         [
-            'text' => '生産者登録',
+            'text' => '私のつぶやき',
             'url'  => 'users/add',
             'icon' => 'fas fa-gamepad',
         ],

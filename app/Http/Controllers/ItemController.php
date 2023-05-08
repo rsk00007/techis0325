@@ -67,12 +67,13 @@ class ItemController extends Controller
                 'area' => $request->area,
             ]);
 
-            return redirect('/users/item/{id}');
+            return redirect('/users/item/' . Auth::user()->id);
         }
 
         return view('item.add');
     }
 
+    // 商品編集画面の表示
     public function edit(Request $request){
 
         $items = Item::where('id','=',$request->id)->first();
@@ -87,7 +88,7 @@ class ItemController extends Controller
             $items = Item::where('id','=',$request->id)->first();
         
             $items->name = $request->name;
-            $items->user_id = Auth::user()->id;
+            //$items->user_id = Auth::user()->id;
             $items->name = $request->name;
             $items->count = $request->count;
             $items->price = $request->price;
@@ -95,7 +96,7 @@ class ItemController extends Controller
             $items->area = $request->area;
             $items->save();
     
-            return redirect('/items');
+            return redirect('/users/item/' . Auth::user()->id);
         }
     
         // データを削除する
@@ -104,6 +105,6 @@ class ItemController extends Controller
             $items = Item::where('id','=',$request->id)->first();
             $items->delete();
     
-            return redirect('/items');
+            return redirect('/users/item/'. Auth::user()->id);
         }
 }

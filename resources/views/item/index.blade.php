@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '商品一覧')
+@section('title', '購入履歴')
 
 @section('content_header')
-    <h1>商品一覧</h1>
+    <h1>購入履歴</h1>
 @stop
 
 @section('content')
@@ -27,13 +27,6 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">商品一覧</h3>
-                    <div class="card-tools">
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-append">
-                                <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap">
@@ -41,14 +34,14 @@
                             <tr>
                                 <th>名前</th>
                                 <th>販売価格</th>
-                                <th>収穫日</th>
-                                <th>生産地</th>
+                                <th>購入日</th>
+                                <th>購入場所</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($items as $item)
                                 <tr>
-                                    <td><a href="{{url('/items/edit/'.$item->id)}}">{{ $item->name }}{{$item->count }}個</a></td>
+                                    <td>{{ $item->name }}{{$item->count }}個</td>
                                     <td>{{ $item->price }}円</td>
                                     <td>{{ $item->hervest_day }}</td>
                                     <td>{{ $item->area }}</td>
