@@ -63,12 +63,12 @@ class UserController extends Controller
 
     }
 
-    public function item(Request $request){
+    public function item($id){
 
-        $items = Item::where('user_id','=',$request->user_id)->first();
 
+        $items = Item::where('user_id','=',$id)->get();
         return view('user.item')->with([
-            'item' => $items
+            'items' => $items
         ]);
     }
 }
