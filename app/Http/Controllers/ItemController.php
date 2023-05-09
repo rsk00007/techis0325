@@ -85,6 +85,24 @@ class ItemController extends Controller
 
         // 編集を保存して一覧画面へ
         public function update(Request $request){
+        // POSTリクエストのとき
+        if ($request->isMethod('post')) {
+            // バリデーション
+            $this->validate($request, [
+                'name' => 'required|max:100',
+                'count' => 'required',
+                'price' => 'required',
+                'buy_day' => 'required',
+                'shop' => 'required',
+            ],
+                [
+                    'name.required' => '名前を入力してください。',
+                    'count.required' => '1袋あたりの個数を入力してください。',
+                    'price.required' => '販売価格を入力してください。',
+                    'buy_day.required' => '収穫日を入力してください。',
+                    'shop.required' => '生産地を入力してください。',
+                ]);
+
             $items = Item::where('id','=',$request->id)->first();
         
             $items->name = $request->name;
@@ -97,6 +115,8 @@ class ItemController extends Controller
             $items->save();
     
             return redirect('/users/item/' . Auth::user()->id);
+            }
+        return view('item.add');
         }
     
         // データを削除する
