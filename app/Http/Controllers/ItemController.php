@@ -48,13 +48,13 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
-                'hervest_day' => 'required',
-                'area' => 'required',
+                'buy_day' => 'required',
+                'shop' => 'required',
             ],
                 [
                     'name.required' => '名前を入力してください。',
-                    'hervest_day.required' => '収穫日を入力してください。',
-                    'area.required' => '生産地を入力してください。',
+                    'buy_day.required' => '収穫日を入力してください。',
+                    'shop.required' => '生産地を入力してください。',
                 ]);
 
             // 商品登録
@@ -63,8 +63,8 @@ class ItemController extends Controller
                 'name' => $request->name,
                 'count' => $request->count,
                 'price' => $request->price,
-                'hervest_day' => $request->hervest_day,
-                'area' => $request->area,
+                'buy_day' => $request->buy_day,
+                'shop' => $request->shop,
             ]);
 
             return redirect('/users/item/' . Auth::user()->id);
@@ -92,8 +92,8 @@ class ItemController extends Controller
             $items->name = $request->name;
             $items->count = $request->count;
             $items->price = $request->price;
-            $items->hervest_day = $request->hervest_day;
-            $items->area = $request->area;
+            $items->buy_day = $request->buy_day;
+            $items->shop = $request->shop;
             $items->save();
     
             return redirect('/users/item/' . Auth::user()->id);

@@ -39,12 +39,12 @@
                             <input type="number" min=0 step=10 class="form-control" id="price" name="price" value="{{$item->price}}">
 
                         <div class="form-group">
-                            <label for="hervest_day">購入日</label>
-                            <input type="date" class="form-control" id="hervest_day" name="hervest_day" value="{{$item->hervest_day}}">
+                            <label for="buy_day">購入日</label>
+                            <input type="date" class="form-control" id="buy_day" name="buy_day" value="{{$item->buy_day}}">
 
                         <div class="form-group">
-                            <label for="area">購入場所</label>
-                            <input type="area" class="form-control" id="area" name="area" value="{{$item->area}}">
+                            <label for="shop">購入場所</label>
+                            <input type="shop" class="form-control" id="shop" name="shop" value="{{$item->shop}}">
                         </div>
 
                     <div class="card-footer">

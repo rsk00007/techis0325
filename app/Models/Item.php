@@ -16,8 +16,8 @@ class Item extends Model
         'name',
         'count',
         'price',
-        'hervest_day',
-        'area',
+        'buy_day',
+        'shop',
         'stock',
         'comment',
     ];

@@ -39,13 +39,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="hervest_day">購入日</label>
-                            <input type="date" class="form-control" id="hervest_day" name="hervest_day" value="<?php echo date('Y-m-j');?>">
+                            <label for="buy_day">購入日</label>
+                            <input type="date" class="form-control" id="buy_day" name="buy_day" value="<?php echo date('Y-m-j');?>">
                         </div>
 
                         <div class="form-group">
-                            <label for="area">購入場所</label>
-                            <input type="area" class="form-control" id="area" name="area" placeholder="">
+                            <label for="shop">購入場所</label>
+                            <input type="shop" class="form-control" id="shop" name="shop" placeholder="">
                         </div>
 
                     </div>

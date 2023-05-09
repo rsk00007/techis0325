@@ -24,15 +24,15 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="producer">名前</label>
-                            <input type="text" class="form-control" id="producer" name="producer" placeholder="名前" value="{{$user->producer}}">
+                            <label for="nickname">名前</label>
+                            <input type="text" class="form-control" id="nickname" name="nickname" placeholder="名前" value="{{$user->nickname}}">
                         </div>
                         <div class="form-group">
-                            <label for="area_1">今日の予定</label>
-                            <input type="text" class="form-control" id="area_1" name="area_1" placeholder="今日の予定" value="{{$user->area_1}}">
+                            <label for="schedule">今日の予定</label>
+                            <input type="text" class="form-control" id="schedule" name="schedule" placeholder="今日の予定" value="{{$user->schedule}}">
                         </div>
                         <div class="form-group">
-                            <label for="comment">お願いごと</label>
+                            <label for="comment">ひとこと</label>
                             <textarea name="comment" class="form-control">{{$user->comment}}</textarea>
                         </div>
 

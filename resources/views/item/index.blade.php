@@ -43,8 +43,8 @@
                                 <tr>
                                     <td>{{ $item->name }}{{$item->count }}個</td>
                                     <td>{{ $item->price }}円</td>
-                                    <td>{{ $item->hervest_day }}</td>
-                                    <td>{{ $item->area }}</td>
+                                    <td>{{ $item->buy_day }}</td>
+                                    <td>{{ $item->shop }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

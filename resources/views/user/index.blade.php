@@ -23,14 +23,14 @@
                             <tr>
                                 <th>名前</th>
                                 <th>今日の予定</th>
-                                <th>お願いごと</th>
+                                <th>ひとこと</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td><a href="{{url('/users/item/'.$user->id)}}">{{ $user->producer }}</a></td>
-                                    <td>{{ $user->area_1 }}</td>
+                                    <td><a href="{{url('/users/item/'.$user->id)}}">{{ $user->nickname }}</a></td>
+                                    <td>{{ $user->schedule }}</td>
                                     <td>{{ $user->comment }}</td>
                                 </tr>
                             @endforeach

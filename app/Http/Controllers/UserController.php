@@ -39,20 +39,17 @@ class UserController extends Controller
         if ($request->isMethod('post')) {
             // バリデーション
             $this->validate($request, [
-                'producer' => 'required|max:100',
+                'nickname' => 'required|max:100',
             ],
                 [
-                    'producer.required' => '名前を入力してください。'
+                    'nickname.required' => '名前を入力してください。'
                 ]);
 
             // 生産者登録
             $user = User::where('id','=',Auth::id())->first();
     
-            $user->producer = $request->producer;
-            $user->area_1 = $request->area_1;
-            $user->area_2 = $request->area_2;
-            $user->area_3 = $request->area_3;
-            $user->area_4 = $request->area_4;
+            $user->nickname = $request->nickname;
+            $user->schedule = $request->schedule;
             $user->comment = $request->comment;
             $user->save();
 
