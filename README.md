@@ -1,35 +1,27 @@
-## 商品管理システム
+# 冷蔵庫管理システム
 
-### 環境構築手順
+## 概要
+高齢者が多い、本町では独居老人も多く、高齢者同士で支え合っていかなければいけない現状に注目しました。そこで、高齢者同士のつながりを作るため冷蔵庫管理とお店ごとの価格比較、掲示板という３つの機能をもつシステムを作りました。冷蔵庫の中身が分かることでいつ購入したのか、また高齢者は時間に余裕があるイメージがあり、あえて一つずつ商品を登録していくことでITに強い高齢者を育てることを目的としています。本システムは地域の高齢者どうしが冷蔵庫管理を行うなかで、お店ごとの価格比較や掲示板代わりに使うことも想定しています。
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLかPostgreSQLのデータベース作成（名前：item_management）  
-  ローカルでMAMPを使用しているのであれば、MySQL推奨
-* .env にデータベース接続情報追加
-```
-例）
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=item_management
-DB_USERNAME=root
-DB_PASSWORD=root
-```
-* APP_KEY生成
-```
-$ php artisan key:generate
-```
-* Composerインストール
-```
-$ composer install
-```
-* フロント環境構築
-```
-$ npm install
-$ npm run dev
-```
-* マイグレーション
-```
-$ php artisan migrate
-```
+## 主な機能
+ログイン・ログアウト機能  
+購入履歴画面  
+登録者一覧画面  
+登録者別冷蔵庫の中身  
+商品登録画面  
+商品編集画面
+
+## 開発環境
+PHP 7.4  
+MySQL 5.7  
+Lalavel 8.75  
+
+## 設計書
+[設計書ページへ](https://docs.google.com/spreadsheets/d/1_QLDlVRjz1if-C-GR0otzhArdTSl200v/edit#gid=45916683)
+
+## システム閲覧
+[アプリケーションページへ](https://techis0325.herokuapp.com/)
+
+### テストアカウント情報
+メールアドレス taro@techis.jp  
+パスワード taro1111
